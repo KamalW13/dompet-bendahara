@@ -1,0 +1,84 @@
+@import '../style.scss';
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+}
+
+.form{
+    padding: 56px;
+    border-radius: 18px;
+    box-shadow: 0px 28px 75px 0px rgba(137, 82, 255, 0.29);
+    display: flex;
+    flex-direction: column;
+
+    .logo{
+        text-align: center;
+        margin-bottom: 77px;
+        img{
+            width: 220px;
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 29px;
+
+        .judul{
+            font-weight: bold;
+            margin-bottom: 28px;
+            opacity: .7;
+        }
+
+        input{
+            padding: 15px;
+            border-radius: 7px;
+            width: 282px;
+            margin-bottom: 13px;
+            outline: none;
+            border: 1px solid rgba(0,0,0, .2);
+        }
+
+        button{
+            margin-top: 29px;
+            padding: 16px;
+            border-radius: 7px;
+            background-color: $brandColor;
+            color: white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            &:hover{
+                background-color: darken($brandColor, 30%);
+            }
+        }
+    }
+
+    .signup{
+        text-align: center;
+
+        span{
+            opacity: .4;
+        }
+
+        a{
+            color: $brandColor;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .form{
+        box-shadow: none;
+        padding: none;
+    }
+}
