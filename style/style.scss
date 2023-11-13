@@ -1,0 +1,1521 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: .3s;
+}
+
+:root{
+    --theme-mode: 'light';
+}
+
+
+$textPriority1DarkMode: rgb(255, 255, 255);
+$textPriority2DarkMode: rgba(255, 255, 255, 0.659);
+$textPriority3DarkMode: rgba(255, 255, 255, 0.395);
+
+$textPriority1LightMode: rgb(0, 0, 0);
+$textPriority2LightMode: rgba(0, 0, 0, 0.8);
+$textPriority3LightMode: rgba(0, 0, 0, 0.5);
+
+// Light Mode
+$backgroundPriority1ColorLight: #FFFFFF; // Background Color
+$backgroundPriority2ColorLight: #F1F1F1;
+$backgroundPriority1ColorDark: #232729;
+$backgroundPriority2ColorDark: #1B1B1D;
+
+$brandColor: #8952FF; // Nav Profile Background
+$brandColor2: #6334FF;
+
+$card: linear-gradient(102deg, #6334FF -4.92%, #CE44FF 50.16%, #8053FF 101.9%);
+
+
+
+body{
+    background: $backgroundPriority2ColorLight;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+
+    .logoAndProfile, a.btnTambahDataMobile{
+        display: none;
+    }
+
+    nav{
+        width: 400px;
+        border-right: 1px solid #D0D0D0;
+        height: 100vh;
+        background-color: $backgroundPriority1ColorLight;
+        display: flex;
+        flex-direction: column;
+
+        iconify-icon{
+            margin-right: 20px;
+        }
+
+        .head-nav{
+            padding: 47px;
+            background-color: $brandColor;
+
+            .logo{
+                margin-bottom: 30px;
+                img{
+                    width: 117px;
+                }
+            }
+
+            .profile{
+                display: flex;
+                color: $textPriority1DarkMode;
+                .photo{
+                    width: 80px;
+                    height: 80px;
+                    background-color: black;
+                    border: 2px solid white;
+                    border-radius: 50%;
+                    margin-right: 16px;
+                }
+
+
+                .right-profile{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .nama{
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        width: 190px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .edit{
+                        font-size: .9em;
+                    }
+                }
+            }
+
+            a{
+                color: white;
+            }
+        }
+
+        .body-nav{
+            padding: 47px;
+            position: relative;
+            height: 100%;
+
+            .total-dompet{
+                width: 100%;
+                height: 124px;
+                background: $card;
+                border-radius: 7px;
+                box-shadow: 0px 9px 14px 0px rgba(140, 81, 255, 0.36);
+                margin-bottom: 40px;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                padding: 28px;
+                justify-content: center;
+                font-weight: 300;
+
+                .nominal{
+                    font-weight: bold;
+                    font-size: 1.4em;
+                }
+            }
+            
+            ul{
+                li{
+                    &.is-active a{
+                        color: $brandColor;
+                    }
+
+                    list-style: none;
+                    margin-bottom: 21px;
+                    cursor: pointer;
+                    
+                    a{
+                        display: flex;
+                        align-items: center;
+                        color: rgba(0, 0, 0, 0.417);
+                        transition: .2s;
+                    }
+
+                    &:hover a{
+                        color: $brandColor;
+                    }
+                }
+            }
+
+            .log-out{
+                position: absolute;
+                bottom: 100px;
+
+                a{
+                    display: flex;
+                    align-items: center;
+                    color: black;
+                    opacity: .6;
+                }
+            }
+        }
+    }
+
+    .contents{
+        margin: 0 29px;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+
+        // *{
+        //     border: 1px solid red;
+        // }
+    }
+
+    .content{
+        width: 100%;
+        height: 100vh;
+        display: none;
+
+        &.is-active{
+            display: inline-block;
+        }
+
+        .dashboard .dompets .data .nominal,
+        .dompet .kumpulanDompet .data a.wrapper .nominal{
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    
+        .totalDompetMobile, a.tambahDataMobile{
+            display: none;
+        }
+
+        // Content > Dashboard =========
+        &.dashboards{
+            height: 100%;
+            .dashboard{
+                width: 100%;
+                max-height: 95vh;
+                display: grid;
+                grid-template-areas: 'totalDompet totalDompet'
+                                    'history dompets'
+                                    'tambahDataNominal tambahDataDompet';
+                align-items: flex-start;
+                grid-template-rows: auto 1fr auto;
+                gap: 20px;
+                position: relative;
+                overflow-y: hidden;
+
+                .totalDompet{
+                    grid-area: totalDompet;
+                    background-color: $brandColor2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color: white;
+                    height: 139px;
+                    border-radius: 18px;
+                    
+                    .nominal{
+                            font-size: 2em;
+                            font-weight: bold;
+                    }
+                }
+
+                .history, .dompets{
+                    background-color: $backgroundPriority1ColorLight;
+                    height: 70vh;
+                    border-radius: 18px;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+
+                    .head{
+                        display: flex;
+                        align-items: center;
+                        padding: 40px;
+
+                        .judul{
+                            color: $textPriority3LightMode;
+                            font-weight: 500;
+                            font-size: 1.3em;
+                            display: flex;
+                            align-items: center;
+                            margin-right: 19px;
+                        }
+                    }
+
+                    .body{
+                        max-height: 100%;
+                        overflow-y: scroll;
+                        padding: 0 40px;
+                    }
+                }
+
+                .history{
+                    grid-area: history;
+
+                    .filter{
+                        background-color: $backgroundPriority2ColorLight;
+                        
+                        select{
+                            color: black;
+                            border: none !important;
+                            outline: none;
+                            padding: 8px 26px;
+                            border-radius: 50%;
+                            background-color: transparent;
+
+                            option{
+                                color: $textPriority1LightMode;
+                                padding: 8px 26px;
+                            }
+                        }
+                    }
+
+                    .body .tanggal{
+                        .judul{
+                            color: $textPriority2LightMode;
+                            margin-bottom: 15px;
+                        }
+
+                        .data{
+                            border-radius: 9px;
+                            padding: 13px;
+                            display: flex;
+                            background-color: $backgroundPriority1ColorLight;
+                            box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.10);
+                            margin-bottom: 20px;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .informasi{
+                                display: flex;
+                                flex-direction: column;
+                                .namaDompet{
+                                    color: $textPriority2LightMode;
+                                    position: relative;
+                                    margin-left: 15px;
+                                    
+                                    &::before{
+                                        content: '';
+                                        width: 5px;
+                                        height: 50%;
+                                        background-color: $brandColor;
+                                        position: absolute;
+                                        border-radius: 20px;
+                                        left: -15px;
+                                        top: 5px;
+                                    }
+                                }
+                                .deskripsi{
+                                    color: $textPriority3LightMode;
+                                    font-size: .8em;
+                                }
+                            }
+
+                            .nominal{
+                                font-weight: 500;
+                                font-size: 1.3em;
+                            }
+                        }
+                    }
+                }
+
+                .dompets{
+                    grid-area: dompets;
+
+                    .data{
+                        margin-bottom: 15px;
+                        a{
+                            width: 100%;
+                            height: 163px;
+                            background: $card;
+                            display: flex;
+                            padding: 40px 20px;
+                            border-radius: 6px;
+                            color: $textPriority1DarkMode;
+                            flex-direction: column;
+                            position: relative;
+                            box-shadow: none;
+
+                            .nominal{
+                                margin-top: 15px;
+                            }
+
+                            .lihat{
+                                position: absolute;
+                                bottom: 20px;
+                                right: 25px;
+                                font-size: .8em;
+                            }
+
+                            &:hover{
+                                transform: translateX(5px);
+                            }
+                        }
+                    }
+                }
+
+                a.tambahDataNominal, a.tambahDataDompet{
+                    background-color: $backgroundPriority1ColorLight;
+                    color: $backgroundPriority2ColorDark;
+                    padding: 11px 50px;
+                    border-radius: 10px;
+                    text-align: center;
+                    transition: 0s;
+
+                    &:hover{
+                        background-color: $brandColor2;
+                        color: white;
+                    }
+                }
+
+                a.tambahDataNominal{
+                    grid-area: tambahDataNominal;
+                }
+
+                a.tambahDataDompet{
+                    grid-area: tambahDataDompet;
+                }
+            }
+        }
+        // >>>>>>>>>>>> END >> Content > Dashboard
+
+        // Content > Dompet =========
+        &.dompets{
+            position: relative;
+            height: 100%;
+            overflow-y: hidden;
+            .dompet{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .totalDompetYangDipilih, .kumpulanDompet, .tambahData button{
+                    border-radius: 12px;
+                    padding: 27px;
+                    margin-bottom: 15px;                                                                                                                                                          ;
+                }
+
+                .totalDompetYangDipilih{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: $brandColor;
+                    color: white;
+                    align-items: center;
+
+                    .nominal{
+                        span{
+                            font-weight: bold;
+                            font-size: 1.2em;
+                        }
+                    }
+                    
+                    .pilihDompet{
+                        cursor: pointer;
+                        display: flex;
+                        cursor: pointer;
+                        align-items: center;
+
+                        font-size: .8em;
+
+                        .checkbox-wrapper-45 {
+                            position: relative;
+                            margin-left: 10px;
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .checkbox-wrapper-45 input[type="checkbox"] {
+                            display: none;
+                            visibility: hidden;
+                        }
+                        .checkbox-wrapper-45 .cbx {
+                            -webkit-perspective: 20;
+                            perspective: 20;
+                            display: inline-block;
+                            border: 2px solid #e8e8eb;
+                            background: #e8e8eb;
+                            border-radius: 4px;
+                            transform: translate3d(0, 0, 0);
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                        }
+                        .checkbox-wrapper-45 .cbx:hover {
+                            border-color: #ffffff;
+                        }
+                        .checkbox-wrapper-45 .flip {
+                            display: block;
+                            transition: all 0.4s ease;
+                            transform-style: preserve-3d;
+                            position: relative;
+                            width: 30px;
+                            height: 30px;
+                        }
+                        .checkbox-wrapper-45 input[type="checkbox"]:checked + .cbx {
+                            border: 2px solid white;
+                        }
+                        .checkbox-wrapper-45 input[type="checkbox"]:checked + .cbx .flip {
+                            transform: rotateY(180deg);
+                        }
+                        .checkbox-wrapper-45 .front,
+                        .checkbox-wrapper-45 .back {
+                            backface-visibility: hidden;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 2px;
+                        }
+                        .checkbox-wrapper-45 .front {
+                            background: #fff;
+                            z-index: 1;
+                        }
+                        .checkbox-wrapper-45 .back {
+                            transform: rotateY(180deg);
+                            background: $brandColor2;
+                            text-align: center;
+                            color: #fff;
+                            line-height: 30px;
+                        }
+                        .checkbox-wrapper-45 .back svg {
+                            margin-top: 3px;
+                            fill: none;
+                        }
+                        .checkbox-wrapper-45 .back svg path {
+                            stroke: #fff;
+                            stroke-width: 2.5;
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                        }
+                    }
+                }
+
+                .info{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 25px;
+                }
+
+                .kumpulanDompet{
+                    flex: 3;
+                    height: 500px;
+                    overflow-y: scroll;
+
+                    .wrapperDompet{
+                        width: 100%;
+                        height: fit-content;
+                        display: flex;
+                        flex-wrap: wrap;
+                        position: relative;
+                        align-items: flex-start;
+                        justify-content: left;
+                        gap: 20px;
+
+                        .data{
+                            display: flex;
+                            position: relative;
+                            min-width: 440px;
+                            height: 200px;
+                            background: linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%);
+                            border-radius: 6px;
+
+                            div.pilihNominalDompet{
+                                display: none;
+                            }
+
+                            &.selectNominal{
+                                filter: grayscale(100%);
+
+                                &:hover{
+                                    filter: grayscale(0%);
+                                }
+
+                                .settings{
+                                    display: none;
+                                }
+
+                                & > div.pilihNominalDompet{
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 2;
+                                    cursor: pointer;
+                                    border-radius: 6px;
+                                    display: inline-block;
+
+                                    span.indicator{
+                                        position: absolute;
+                                        width: 50px;
+                                        height: 50px;
+                                        border-radius: 50%;
+                                        right: 12px;
+                                        top: 12px;
+                                        border: 1px solid white;
+                                        background-color: white;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        iconify-icon{
+                                            margin-left: 8px;
+                                            color: $brandColor2;
+                                            opacity: 0;
+                                        }
+                                    }
+                                    input{
+                                        display: none;
+                                    }
+                                }
+
+                                &.activeSelect{
+                                    filter: grayscale(0%);
+                                    iconify-icon{
+                                        opacity: 1 !important   ;
+                                    }
+                                }
+                            }
+
+                            &:hover{
+                                transform: translateY(-5px);
+                            }
+
+                            &.empty{
+                                background: white;
+                                border: 3px dashed rgb(151, 151, 151);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                text-align: center;
+                                display: none;
+
+                                &:hover{
+                                    background: rgba(151, 151, 151, 0.205);
+                                    transform: unset;
+                                }
+                            }
+
+                            a{
+                                color: white;
+                            }
+
+                            a.wrapper{
+                                display: flex;
+                                width: 100%;
+                                height: 100%;
+                                padding: 24px;
+                                justify-content: center;
+                                align-items: left;
+                                flex-direction: column;
+                                position: relative;
+
+                                .nominal{
+                                    display: flex;
+                                }
+
+                                .lihat{
+                                    position: absolute;
+                                    bottom: 24px;
+                                    right: 24px;
+                                    font-size: .8em;
+                                    font-weight: 300;
+                                }
+                            }
+
+                            .settings{
+                                position: absolute;
+                                top: 20px;
+                                right: 0;
+                                display: flex;
+
+                                a{
+                                    height: 35px;
+                                    width: 35px;
+                                    padding: 10px;
+                                    display: flex;
+                                    justify-content: center;
+                                    margin-right: 5px;
+                                    align-items: center;
+                                    
+                                    iconify-icon{
+                                        margin-right: 0;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                    &::-webkit-scrollbar{
+                        background: rgb(209, 209, 209);
+                        width: 5px;
+                    }
+
+                    &::-webkit-scrollbar-thumb{
+                        background: $brandColor2;
+                        border-radius: 15px;
+                    }
+                    
+                    }
+
+                .kumpulanDompet, .tambahData a{
+                    background-color: white;
+                }
+
+                .tambahData{
+                    display: flex;
+                    justify-content: right;
+
+                    button{
+                        color: $textPriority2LightMode;
+                        padding: 20px 37px;
+
+                        &:hover{
+                            background-color: $brandColor2;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .pageTambahData{
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+                transform: translateY(100vh);
+                background-color: white;
+
+                &.is-active{
+                    transform: translateY(0);
+                }
+
+                .tambahDataDompet{
+                    display: grid;
+                    grid-template-areas: 'namaDompet temaWarna'
+                                        'hasil temaWarna'
+                                        'action action';
+                    width: 100%;
+                    height: 100%;
+                    background-color: white;
+                    justify-content: center;
+                    gap: 80px;
+                    padding-top: 100px;
+                    
+                    .judul{
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 25px;
+                            color: #545454;
+                        }
+
+                    .namaDompet{
+                        grid-area: namaDompet;
+                        display: flex;
+                        flex-direction: column;
+                        height: fit-content;
+                        width: 500px;
+                        
+                        input{
+                            border-radius: 6px;
+                            border: 1px solid #CDCDCD;
+                            background: #ECECEC;
+                            padding: 20px 30px;
+                            font-size: 2em;
+                            outline: none;
+                            height: 140px;
+                        }
+                    }
+
+                    .temaWarna{
+                        grid-area: temaWarna;
+                        display: flex;
+                        flex-direction: column;
+                        width: 500px;
+                        gap: 19;
+                        position: relative;
+
+                        .kumpulanWarna{
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                            overflow-y: scroll;
+                            padding: 10px;
+                            height: 500px;
+                            box-shadow: inset 0 -5px 10px 1px rgba(0, 0, 0, 0.138);
+
+                            &::-webkit-scrollbar{
+                                background: rgb(191, 191, 191);
+                                width: 5px;
+                            }
+
+                            &::-webkit-scrollbar-thumb{
+                                background: $brandColor;
+                                border-radius: 15px;
+                            }
+
+                            .boxColor{
+                                display: inline-block;
+                                width: 220px;
+                                height: 130px;
+                                border: 1px solid rgb(208, 208, 208);
+                                border-radius: 6px;
+                                cursor: pointer;
+
+                                &:hover{
+                                    transform: translateY(-2px);
+                                }
+                            }
+                            
+                        }
+                    }
+
+                    .hasil{
+                        grid-area: hasil;
+                        display: flex;
+                        flex-direction: column;
+
+                        .dompet{
+                            border-radius: 6px;
+                            background: linear-gradient(100deg, #7342FF 5.48%, #F047FF 52.58%, #BB4BFF 92.44%);
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            color: white;
+                            padding: 30px;
+                            position: relative;
+                            box-shadow: 0px 19px 38px 0px rgba(0, 0, 0, 0.13);
+                            height: 200px;
+
+                            .nominal{
+                                font-weight: bold;
+                                font-size: 2em;
+                            }
+
+                            span.lihat{
+                                position: absolute;
+                                bottom: 30px;
+                                right: 30px;
+                                cursor: no-drop;
+                            }
+                        }
+                    }
+
+                    .action{
+                        grid-area: action;
+                        display: flex;
+                        justify-content: center;
+                        gap: 60px;
+
+                        button, a{
+                            width: 100%;
+                            height: 100px;
+                            outline: none;
+                            cursor: pointer;
+                            border-radius: 6px;
+                        }
+
+                        button{
+                            border: none;
+                            background-color: rgb(234, 234, 234);
+
+                            &:hover{
+                                background-color: darken($color: rgb(234, 234, 234), $amount: 5%);
+                            }
+                        }
+
+                        a{
+                            background-color: $brandColor;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: white;
+                            
+                            &:hover{
+                                background-color: darken($color: $brandColor, $amount: 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // >>>>>>>>>>> END >> Content > Dompet
+
+        // Content > History =========
+        &.historys{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background-color: white;
+            padding: 50px 34px 0;
+            position: relative;
+
+            .filter{
+                display: flex;
+                align-items: center;
+                justify-content: right;
+                gap: 50px;
+   
+                .filter-box{
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    
+                    .select-box{
+                        display: flex;
+
+                        select{
+                            padding: 10px 18px;
+                            width: 300px;
+                            border-radius: 5px;
+                            border: none;
+                            outline: none;
+                            position: relative;
+                            background: #EEE;
+                        }     
+                    }
+                }
+                
+            }
+
+            .btnTambahData{
+                text-align: right;
+                margin-top: 20px;
+
+                a{
+                    display: inline-block;
+                    padding: 10px;
+                    background-color: #eee;
+                    border-radius: 5px;
+                    color: rgb(49, 49, 49);
+                    border: 1px solid #dedede;
+                    transition: 0s;
+                    cursor: pointer;
+                    
+                    &:hover{
+                        background-color: #cfcfcf;
+                    }
+                }
+            }
+
+            .history{
+                height: 100%;
+                margin-top: 20px;
+                overflow-y: scroll;
+                padding: 20px;
+                padding-bottom: 100px;
+                
+                .data{
+                    margin-bottom: 15px;
+                    .tanggal{
+                        width: 100%;
+                        display: block;
+                        color: black;
+                        padding-top: 30px;
+                        margin-bottom: 10px;
+                    }
+                    .wrapper-data{
+                        display: flex;
+                        width: 100%;
+                        .dompet{
+                            flex: 3;
+                            display: grid;
+                            grid-template-areas: 'namaDompet namaDompet'
+                                                'deskripsi nominal';
+                            background-color: white;
+                            box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.10);
+                            border-radius: 5px;
+                            align-items: center;
+
+                            .namaDompet{
+                                grid-area: namaDompet;
+                                font-size: 1.2em;
+                                padding: 5px 25px;
+                                background-color: $brandColor;
+                                color: white;
+                                border-radius: 5px 5px 0 0;
+                            }
+
+                            .deskripsi{
+                                grid-area: deskripsi;
+                                display: flex;
+                                flex-direction: column;
+                                padding: 15px 29px;
+                                color: rgb(43, 43, 43);
+
+                                .deskripsi-text{
+                                    font-size: .9em;
+                                    font-weight: 400;
+                                    color: #8D8D8D;
+                                }
+                            }
+
+                            .nominal{
+                                grid-area: nominal;
+                                font-weight: 500;
+                                color: #6F6262;
+                                text-align: right;
+                                padding-right: 29px;
+                                font-size: 1.5em;
+                            }
+                        }
+
+                        .action{
+                            margin-left: 15px;
+                            display: flex;
+                            gap: 7px;
+
+                            *{
+                                transition: 0s !important;
+                            }
+                            a{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: $brandColor;
+                                padding: 22px;
+                                border-radius: 5px;
+                                color: white;
+
+                                &:hover{
+                                    background-color: darken($brandColor, 10%);
+                                }
+
+                                &.delete{
+                                    background-color: #D0C1FF;
+                                    color: $brandColor;
+
+                                    &:hover{
+                                        background-color: darken(#D0C1FF, 20%);
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .data:nth-child(1) .tanggal{
+                    padding-top: 0 !important;
+                }
+            }
+
+            form.tambahDataPage{
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: grid;
+                place-content: center;
+                width: 100%;
+                height: 100vh;
+                backdrop-filter: blur(2px);
+                transform: translateY(100vh);
+
+                &.is-active{
+                    transform: translateY(0);
+                }
+
+                .wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    background-color: white;
+                    border: 1px solid $brandColor2;
+                    box-shadow: 0px 30px 200px 50px #ffffff76;
+                    padding: 29px 39px;
+                }
+
+                .field{
+                    margin-bottom: 40px;
+
+                    .judul{
+                        margin-bottom: 7px;
+                        color: #5B5B5B;
+                    }
+
+                    &.nominal{
+                        label{
+                            background-color: #EEEEEE;
+                            padding: 10px;
+                            border-radius: 5px;
+                            
+                            span, input{
+                                font-size: 1.2em;
+                            }
+
+                            input{
+                                background-color: transparent;
+                                outline: none;
+                                border: none;
+                            }
+                        }
+                    }
+
+                    &.dompet{
+                        select{
+                            padding: 13px 20px;
+                            width: 100%;
+                            border-radius: 5px;
+                            outline: none;
+                        }
+                    }
+
+                    &.kategori{
+                        display: flex;
+                        gap: 10px;
+                        width: 100%;
+
+                        label{
+                            background-color: #EEEEEE;
+                            flex: 1;
+                            padding: 10px;
+                            border-radius: 30px;
+                            text-align: center;
+                            cursor: pointer;
+                            color: #9B9B9B
+                        }
+
+                        input[type="radio"]{
+                            display: none;
+                            &:checked + label{
+                                background-color: $brandColor2;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                button{
+                    padding: 10px;
+                    border: none;
+                    outline: none;
+                    background-color: $brandColor2;
+                    color: white;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: darken($brandColor2, 25%);
+                    }
+
+                    &.batal{
+                        margin-bottom: 10px;
+                        background-color: #EEEEEE;
+                        color: #9B9B9B;
+                        margin-top: 50px;
+
+                        &:hover{
+                            background-color: darken(#EEEEEE, 5%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+    
+    body{
+        background: linear-gradient(164deg, #BD00FF 7.01%, #5E36FF 40.72%) !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100vh;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        .logoAndProfile{
+            display: flex;
+            justify-content: space-between;
+            width: 100vw;
+            padding: 20px;
+            padding-top: 60px;
+            position: fixed;
+            top: 0;
+            background-color: transparent;
+            backdrop-filter: blur(5px);
+
+            .logo{
+                img{
+                    width: 117px;
+                }
+            }
+
+            .profile{
+                width: 33px;
+                height: 33px;
+                background-color: black;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+        }
+
+        nav{
+            position: fixed;
+            bottom: 0;
+            width: 100vw;
+            height: fit-content;
+            z-index: 2;
+            border-top: 1px solid $brandColor2;
+
+            .head-nav{
+                display: none;
+            }
+            .body-nav{
+                padding: 13px 60px;
+
+                .total-dompet{
+                    display: none;
+                }
+
+                ul.list-nav{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    li{
+                        cursor: pointer;
+                        margin-bottom: 0;  
+
+                        a{
+                            display: inline-block;
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        iconify-icon{
+                            margin-left: 20px;
+                        }
+                    }
+                }
+
+                .log-out{
+                    display: none;
+                }
+            }
+        }
+
+        .contents{
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            position: relative;
+
+            .content{
+                display: none;
+                flex-direction: column;
+
+                &.is-active{
+                    display: inline-block;
+                }
+
+                .totalDompetMobile{
+                    margin-bottom: 41px;
+                    margin-top: 160px;
+                    background-color: transparent;
+                    height: fit-content;
+                    text-align: center;
+                    color: white;
+                    display: inline-block;
+                    width: 100vw;
+
+                    .nominal{
+                        font-size: 2.5;
+                        display: block;
+                        font-size: 2.1em;
+                        font-weight: bold;
+                        
+                    }
+                }
+                // Content > Dashboard
+                .dashboard{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: white;
+                    border-radius: 20px 20px 0 0;
+                    overflow-x: hidden;
+                    padding-bottom: 200px;
+                    padding-top: 10px;
+                    align-items: center;
+                    position: relative;
+                    overflow-y: unset;
+                    border-top: 1px solid white;
+
+                    & *::-webkit-scrollbar{
+                        background: rgb(191, 191, 191);
+                        width: 5px;
+                    }
+
+                    & *::-webkit-scrollbar-thumb{
+                        background: $brandColor2;
+                        border-radius: 15px;
+                    }
+
+                    .totalDompet{
+                        display: none;
+                    }
+
+                    .fullScreen{
+                        position: absolute;
+                        top: -5px;
+                        background-color: white;
+                        z-index: 2;
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        justify-content: center;
+                        padding: 10px;
+                        border-bottom: 1px solid rgb(174, 174, 174);
+                        
+                        &:hover{
+                            background-color:rgb(197, 197, 197) ;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .history, .dompets{
+                        border-radius: 0;
+                        background-color: transparent;
+                        height: 450px;
+                        margin: 0 20px;
+                        position: relative !important;
+                        width: 100%;
+
+                        .head{
+                            padding: 10px 20px;
+
+                            .judul{
+                                font-size: 1em;
+                            }
+                        }
+
+                        .body{
+                            padding: 20px;
+                        }
+                    }
+
+                    .history{
+                        .filter{
+                            display: none;
+                        }
+                        .body{
+                            .tanggal{
+                                .nominal{
+                                    font-size: 1.2em !important;
+                                }
+                            }
+                        }
+                    }
+
+                    .dompets{
+                        .data{
+                            a{
+                                height: 120px;
+                                padding: 0 20px;
+                                justify-content: center;
+
+                                .namaDompet{
+                                    font-size: .8em;
+                                    opacity: .8;
+                                }
+
+                                .nominal{
+                                    margin-top: 0;
+                                    font-size: 1.2em;
+                                }
+                            }
+                        }
+                    }
+
+                    a.tambahDataNominal, a.tambahDataDompet{
+                        display: none;
+                    }
+                }
+
+                // Content > Dompet
+                .dompet{
+                    background-color: white;
+                    border-radius: 15px;
+                    padding-bottom: 150px;
+                    transform: translateY(-15vh);
+
+                    &.moveTransform{
+                        transform: translateY(0);
+                    }
+
+                    .totalDompetYangDipilih{
+                        background-color: transparent;
+                        justify-content: right;
+                        color: #5b5b5b;
+                        order: 2;
+                        padding: 0px 27px;
+                        margin-bottom: 9px;
+                        .nominal{
+                            display: none;
+                        }
+
+                        .pilihDompet{
+                            .checkbox-wrapper-45 .cbx:hover {
+                                border-color: $brandColor2;
+                            }
+                            .checkbox-wrapper-45 input[type="checkbox"]:checked + .cbx {
+                                border: 2px solid $brandColor2;
+                            }
+                        }
+                    }
+
+                    .info{
+                        order: 1;
+                        text-align: left;
+                        font-size: .8em;
+                        padding: 23px;
+                        margin-bottom: 8px;
+                    }
+
+                    .kumpulanDompet{
+                        order: 3;
+                        height: 500px;
+                        padding: 0 27px;
+                        padding-bottom: 100px;
+
+                        .wrapperDompet{
+                            .data{
+                                min-width: 100%;
+                                height: 150px;
+                            }
+                        }
+                    }
+
+                    .tambahData{
+                        display: none;
+                    }
+                }
+
+                .pageTambahData{
+                    width: 100vw;
+                    height: 100vh;
+                    padding: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    *{
+                        border: 1px solid red;
+                    }
+
+                    .tambahDataDompet{
+                        gap: 10px;
+                        grid-template-areas: 'namaDompet' 'temaWarna' 'action';
+                        width: 100%;
+                        height: 90%;
+                        padding-top: 0;
+
+                        .judul{
+                            margin-bottom: 10px;
+                        }
+
+                        .namaDompet{
+                            margin-top: 100px;
+                            width: auto;
+                            input{
+                                padding: 5px;
+                                height: 80px;
+                            }
+                        }
+
+                        .temaWarna{
+                            width: auto;
+
+                            .kumpulanWarna{
+                                height: 300px;
+                                justify-content: center;
+
+                                .boxColor{
+                                    width: 150px;
+                                    height: 100px;
+
+                                    &.selected{
+                                        border: 1px solid black;
+                                    }
+                                }
+                            }
+                        }
+
+                        .hasil{
+                            display: none;
+                        }
+
+                        .action{
+                            flex-direction: column;
+                            gap: 10px;
+                            width: auto;
+                            button, a{
+                                height: 60px;
+                            }
+                        }
+                    }   
+                }
+                a.btnTambahDataMobile{
+                    position: fixed;
+                    bottom: 150px;
+                    right: 30px;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    iconify-icon{
+                        width: fit-content;
+                        background-color: $brandColor2;
+                        border-radius: 10px;
+                        padding: 10px;
+                        box-shadow: 0 0px 5px rgb(255, 255, 255);
+                    }
+                }
+            }
+        }
+    }    
+}
+
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}

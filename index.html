@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+
+<body>
+    <div class="logoAndProfile">
+        <div class="logo">
+            <img src="img/logo2.png" alt="Logo Dompet Bendahara">
+        </div>
+        <div class="profile">
+            <div class="photo"></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="head-nav">
+            <div class="logo">
+                <img src="img/logo2.png" alt="">
+            </div>
+            <div class="profile">
+                <div class="photo"></div>
+                <div class="right-profile">
+                    <span class="nama">Kamal Wahid Melebihi Kacaa</span>
+                    <a href="" class="edit">Edit Profile ></a>
+                </div>
+            </div>
+        </div>
+        <div class="body-nav">
+            <div class="total-dompet">
+                <span>Total Dompet</span>
+                <span class="nominal">Rp<span class="angka">2.000.000 </span></span>
+            </div>
+            <ul class="list-nav">
+                <li class="navDashboard is-active">
+                    <a data-switcher data-tab="dashboard">
+                        <iconify-icon icon="material-symbols:home-outline" width="28"></iconify-icon>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="navDompet">
+                    <a data-switcher data-tab="dompet">
+                        <iconify-icon icon="ph:wallet-bold" width="28"></iconify-icon> <span>Dompet</span>
+                    </a>
+                </li>
+                <li class="navHistory">
+                    <a data-switcher data-tab="history">
+                        <iconify-icon icon="tabler:history" width="28"></iconify-icon> <span>History</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="log-out"> <a href="signin.html">
+                    <iconify-icon icon="mi:log-out" width="28"></iconify-icon> <span>Sign Out</span>
+                </a> </div>
+        </div>
+    </nav>
+
+    <div class="contents">
+        <div class="content dashboards" data-page="dashboard">
+            <div class="totalDompetMobile">
+                <span class="judul">Total Dompet</span>
+                <span class="nominal">
+                    Rp<span class="angka">2.000.000</span>
+                </span>
+            </div>
+
+            <div class="dashboard">
+
+                <div class="totalDompet">
+                    <span class="judul">Total Dompet</span>
+                    <span class="nominal">
+                        Rp<span class="angka">2.000.000</span>
+                    </span>
+                </div>
+
+                <div class="dompets">
+                    <div class="head">
+                        <div class="judul">
+                            <iconify-icon icon="ph:wallet-bold" width="28"></iconify-icon> Dompet
+                        </div>
+                    </div>
+
+                    <div class="body">
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                        <div class="data">
+                            <a href="">
+                                <div class="namaDompet">
+                                    Uang Kas Mentoring
+                                </div>
+                                <div class="nominal">
+                                    Rp<span class="angka">72.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="history">
+                    <div class="head">
+                        <div class="judul">
+                            <iconify-icon icon="ic:round-history" width="28"></iconify-icon> History
+                        </div>
+                        <div class="filter">
+                            <select name="" id="">
+                                <option value="">Semua</option>
+                                <option value="">Pemasukan</option>
+                                <option value="">Pengeluaran</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <div class="tanggal">
+                            <div class="judul">Senin, 22 November 2023</div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="informasi">
+                                    <span class="namaDompet">
+                                        Uang Kas Remila
+                                    </span>
+                                    <span class="deskripsi">Uang Kas Remila Hari Minggu...</span>
+                                </div>
+                                <div class="nominal">
+                                    <span class="infoKeuangan">-</span>
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="" class="tambahDataNominal">+ Tambah Pemasukan/Pengeluaran</a>
+                <a href="" class="tambahDataDompet">+ Tambah Dompet</a>
+            </div>
+        </div>
+
+        <div class="content dompets" data-page="dompet">
+            <div class="totalDompetMobile">
+                <span class="judul">Total Dompet yang dipilih</span>
+                <span class="nominal">
+                    Rp<span class="angka">0</span>
+                </span>
+            </div>
+
+            <div class="dompet">
+                <div class="totalDompetYangDipilih">
+                    <div class="nominal">
+                        <span>Total: Rp</span>
+                        <span class="angka">0</span>
+                    </div>
+                    <div class="pilihDompet">
+                        <label for="cbx-45" class="cbx">Pilih Nominal Dompet</label>
+                        <div class="checkbox-wrapper-45">
+                            <input id="cbx-45" type="checkbox" onchange="checkedOrNo()" />
+                            <label class="cbx" for="cbx-45">
+                                <div class="flip">
+                                    <div class="front"></div>
+                                    <div class="back">
+                                        <svg width="16" height="14" viewBox="0 0 16 14">
+                                            <path d="M2 8.5L6 12.5L14 1.5"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info">
+                    <iconify-icon icon="mdi:about-circle-outline" width="28"></iconify-icon> Aktifkan “Pilih Nominal
+                    Dompet”
+                    untuk menjumlahkan Total Nominal dari beberapa Dompet yang dipilih
+                </div>
+
+                <div class="kumpulanDompet">
+                    <div class="tambahData">
+                        <button class="tambahDompet">+ Tambah Dompet</button>
+                    </div>
+                    <div class="wrapperDompet">
+                        <div class="data empty">
+                            Anda belum menambahkan <br>Dompet sama sekali <br> + Tambah Dompet
+                        </div>
+                        <div class="data"
+                            data-background="linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%)">
+                            <div for="nominalDompet" class="pilihNominalDompet">
+                                <span class="indicator">
+                                    <iconify-icon icon="ic:baseline-done" width="28"></iconify-icon>
+                                </span>
+                            </div>
+                            <a href="" class="wrapper">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                </div>
+                                <div class="nominal">
+                                    <span> Rp</span> <span class="angka">23.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                            <div class="settings">
+                                <a href="" class="edit">
+                                    <iconify-icon icon="basil:edit-outline" width="28"></iconify-icon>
+                                </a>
+                                <a href="" class="delete">
+                                    <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="data"
+                            data-background="linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%)">
+                            <div for="nominalDompet" class="pilihNominalDompet">
+                                <span class="indicator">
+                                    <iconify-icon icon="ic:baseline-done" width="28"></iconify-icon>
+                                </span>
+                            </div>
+                            <a href="" class="wrapper">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                </div>
+                                <div class="nominal">
+                                    <span> Rp</span> <span class="angka">90.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                            <div class="settings">
+                                <a href="" class="edit">
+                                    <iconify-icon icon="basil:edit-outline" width="28"></iconify-icon>
+                                </a>
+                                <a href="" class="delete">
+                                    <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="data"
+                            data-background="linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%)">
+                            <div for="nominalDompet" class="pilihNominalDompet">
+                                <span class="indicator">
+                                    <iconify-icon icon="ic:baseline-done" width="28"></iconify-icon>
+                                </span>
+                            </div>
+                            <a href="" class="wrapper">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                </div>
+                                <div class="nominal">
+                                    <span> Rp</span> <span class="angka">81.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                            <div class="settings">
+                                <a href="" class="edit">
+                                    <iconify-icon icon="basil:edit-outline" width="28"></iconify-icon>
+                                </a>
+                                <a href="" class="delete">
+                                    <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="data"
+                            data-background="linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%)">
+                            <div for="nominalDompet" class="pilihNominalDompet">
+                                <span class="indicator">
+                                    <iconify-icon icon="ic:baseline-done" width="28"></iconify-icon>
+                                </span>
+                            </div>
+                            <a href="" class="wrapper">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                </div>
+                                <div class="nominal">
+                                    <span> Rp</span> <span class="angka">10.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                            <div class="settings">
+                                <a href="" class="edit">
+                                    <iconify-icon icon="basil:edit-outline" width="28"></iconify-icon>
+                                </a>
+                                <a href="" class="delete">
+                                    <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="data"
+                            data-background="linear-gradient(100deg, #426BFF 5.48%, #47B8FF 52.58%, #5A4BFF 92.44%)">
+                            <div for="nominalDompet" class="pilihNominalDompet">
+                                <span class="indicator">
+                                    <iconify-icon icon="ic:baseline-done" width="28"></iconify-icon>
+                                </span>
+                            </div>
+                            <a href="" class="wrapper">
+                                <div class="informasi">
+                                    <span class="namaDompet">Uang Kas Remila</span>
+                                </div>
+                                <div class="nominal">
+                                    <span> Rp</span> <span class="angka">32.000</span>
+                                </div>
+                                <span class="lihat">Lihat ></span>
+                            </a>
+                            <div class="settings">
+                                <a href="" class="edit">
+                                    <iconify-icon icon="basil:edit-outline" width="28"></iconify-icon>
+                                </a>
+                                <a href="" class="delete">
+                                    <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pageTambahData">
+                <div class="tambahDataDompet">
+                    <div class="namaDompet">
+                        <div class="judul">
+                            <iconify-icon icon="ph:wallet-bold" width="28"></iconify-icon> <span>Nama Dompet</span>
+                        </div>
+                        <input type="text" name="" id="" class="nama" placeholder="cth: Uang Kas">
+                    </div>
+                    <div class="temaWarna">
+                        <div class="judul">
+                            <iconify-icon icon="mdi:theme-outline" width="28"></iconify-icon> <span>Tema Warna</span>
+                        </div>
+                        <div class="kumpulanWarna">
+                            <div class="boxColor" data-selectBox ></div>
+                            <div class="boxColor selected" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                            <div class="boxColor" data-selectBox></div>
+                        </div>
+                    </div>
+                    <div class="hasil">
+                        <div class="judul">
+                            <iconify-icon icon="icon-park-outline:theme" width="28"></iconify-icon> Hasil
+                        </div>
+                        <div class="dompet">
+                            <span class="nama">Nama Dompet</span>
+                            <span class="nominal">RpXXX.XXX</span>
+                            <span class="lihat">Lihat ></span>
+                        </div>
+                    </div>
+                    <div class="action">
+                        <button class="batal">Batal</button>
+                        <a href="#" class="tambahData">
+                            + Tambah Dompet
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btnTambahDataMobile">
+                <iconify-icon icon="ic:round-plus" width="48"></iconify-icon>
+            </a>
+        </div>
+
+        <div class="content detailDompet">
+
+        </div>
+
+        <div class="content historys">
+            <div class="filter">
+                <div class="filter-box urut-berdasarkan">
+                    <span class="text">Urut Berdasarkan</span>
+                    <div class="select-box">
+                        <select name="" id="urut-berdasarkan-value">
+                            <option value="">Tanggal</option>
+                            <option value="">Dompet</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-box kategori">
+                    <span class="text">Kategori</span>
+                    <div class="select-box">
+                        <select name="" id="kategori-value">
+                            <option value="">Semua</option>
+                            <option value="">Pendapatan</option>
+                            <option value="">Pengeluaran</option>
+                        </select>
+                    </div>
+                </div>
+                <iconify-icon icon="ion:filter" width="28"></iconify-icon>
+            </div>
+            <div class="btnTambahData">
+                <a>+ Tambah Data Dompet</a>
+            </div>
+            <div class="history">
+                <div class="data">
+                    <span class="tanggal">Senin, 22 November 2023</span>
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>    
+                </div>
+                <div class="data">
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <span class="tanggal">Senin, 22 November 2023</span>
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="data">
+                    <span class="tanggal">Senin, 22 November 2023</span>
+                    <div class="wrapper-data">
+                        <div class="dompet">
+                            <span class="namaDompet">Uang Kas Mentoring</span>
+                            <div class="deskripsi">
+                                <span class="kategori">Pendapatan</span>
+                                <span class="deskripsi-text">Uang Kas Remila Hari Minggu</span>
+                            </div>
+                            <div class="nominal">
+                                + Rp<span class="angka">53.000</span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <a href="" class="edit">
+                                <iconify-icon icon="tdesign:edit" width="28"></iconify-icon>
+                            </a>
+                            <a href="" class="delete">
+                                <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="tambahDataPage">
+                <div class="wrapper">
+                    <div class="field nominal">
+                        <div class="judul">Nominal</div>
+                        <label class="input">
+                            <span>Rp.</span>
+                            <input type="text">
+                        </label>
+                    </div>
+                    <div class="field dompet">
+                        <div class="judul">Dompet</div>
+                        <select name="" id="">
+                            <option value="">Uang Kas Mentoring</option>
+                            <option value="">Uang Kas RSD</option>
+                        </select>
+                    </div>
+                    <div class="field kategori">
+                        <input type="radio" name="kategori" id="pemasukan">
+                        <label for="pemasukan">Pemasukan</label>
+                    
+                        <input type="radio" name="kategori" id="pengeluaran">
+                        <label for="pengeluaran">Pengeluaran</label>
+                    </div>
+                    
+                    <button class="batal">Batal</button>
+                    <button type="submit">Tambah Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        // Function Navigasi Switch Page
+        window.onload = () => {
+            const tab_switchers = document.querySelectorAll('[data-switcher]');
+            for (let index = 0; index < tab_switchers.length; index++) {
+                const tab_switcher = tab_switchers[index];
+                const pageData = tab_switcher.dataset.tab;
+
+                tab_switcher.addEventListener('click', () => {
+                    document.querySelector('nav ul li.is-active').classList.remove('is-active');
+                    tab_switcher.parentNode.classList.add('is-active');
+
+                    switchPage(pageData);
+                })
+            }
+        }
+
+        function switchPage(pageData) {
+            const currentPage = document.querySelector('.contents .content.is-active');
+            currentPage.classList.remove('is-active');
+
+            const nextPage = document.querySelector(`.contents .content[data-page=${pageData}]`);
+            nextPage.classList.add('is-active');
+        }
+
+        // Content > Dompet
+        var totalNominalDompetMobile = document.querySelector('.content.dompets .totalDompetMobile .nominal .angka');
+        var totalNominalDompet = document.querySelector('.dompet .totalDompetYangDipilih .nominal .angka');
+        var nominalDompetYangDipilih = 0;
+        const checkboxDompet = document.querySelector('input#nominalDompet');
+        const kumpulanDompet = document.querySelectorAll('.kumpulanDompet .data');
+        const inputCheckbox = document.querySelector('input#cbx-45');
+        const wrapperContentDompet = document.querySelector('.dompet');
+
+        kumpulanDompet.forEach(dompet => {
+            dompet.addEventListener('click', () => {
+                if (dompet.classList.contains('selectNominal')) {
+                    cardSelect(dompet);
+                }
+            })
+        })
+
+        function cardSelect(dompet) { // Mengaktifkan Fitur Pilih Kartu
+            var nominalElement = dompet.querySelector('.nominal .angka');
+            if (!nominalElement) return;
+
+            var nominal = nominalElement.innerHTML;
+            var angkaStr = nominal.replace(/\D/g, '');
+            var convertAngka = parseInt(angkaStr);
+
+            if (dompet.classList.contains('activeSelect')) {
+                dompet.classList.remove('activeSelect');
+                nominalDompetYangDipilih -= convertAngka;
+            } else {
+                dompet.classList.add('activeSelect');
+                nominalDompetYangDipilih += convertAngka;
+            }
+
+            var angkaTotal = formatRupiah(nominalDompetYangDipilih);
+            totalNominalDompet.innerHTML = angkaTotal;
+            totalNominalDompetMobile.innerHTML = angkaTotal;
+        }
+        function checkedOrNo() { // Checking, Apakah CheckBox di Centang atau tidak
+            if (document.querySelector('.pilihDompet input').checked) {
+                console.log('Aktif');
+                wrapperContentDompet.classList.add('moveTransform');
+                kumpulanDompet.forEach(dompet => {
+                    dompet.classList.add('selectNominal');
+                })
+            } else {
+                console.log('Tidak Aktif');
+                wrapperContentDompet.classList.remove('moveTransform');
+                kumpulanDompet.forEach(dompet => {
+                    dompet.classList.remove('selectNominal');
+                    dompet.classList.remove('activeSelect');
+                })
+                nominalDompetYangDipilih = 0;
+                totalNominalDompet.innerHTML = 0;
+                totalNominalDompetMobile.innerHTML = 0
+            }
+
+            console.log(wrapperContentDompet);
+        }
+        function formatRupiah(angka) { // Merubah Int ke Rupiah
+            var number_string = angka.toString(),
+                sisa = number_string.length % 3,
+                rupiah = number_string.substr(0, sisa),
+                ribuan = number_string.substr(sisa).match(/\d{3}/g);
+
+            if (ribuan) {
+                separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            return rupiah;
+        }
+
+
+
+        // Content > Dompet > pageTambahData = Tambah Data Dompet
+        const btnTambahDataDesktop = document.querySelector('.dompets .dompet .tambahData button');
+        const btnTambahDataMobile = document.querySelector('.dompets a.btnTambahDataMobile');
+        const btnTambahData = [btnTambahDataDesktop, btnTambahDataMobile];
+        btnTambahData.forEach(btn => { // Ketika tombol Tambah Data ditekan
+            btn.addEventListener('click', () => {
+                document.querySelector('.dompets .pageTambahData').classList.add('is-active');
+            })
+        })
+
+        const btnBatalTambahDataDompet = document.querySelector('.dompets .pageTambahData .action button.batal');
+        btnBatalTambahDataDompet.addEventListener('click', () => { // Ketika tombol Batal ditekan
+            document.querySelector('.dompets .pageTambahData').classList.remove('is-active');
+        })
+
+        // Content > Dompet > pageTambahData = Tambah Data Dompet > Select/Pilih Warna Dompet
+        const boxColors = document.querySelectorAll('[data-selectBox]');
+        boxColors.forEach(boxColor => {
+            boxColor.addEventListener('click', ()=>{
+                document.querySelector('.boxColor.selected').classList.remove('selected');
+                boxColor.classList.add('selected');
+            })
+        })
+
+
+
+        // Content > History > pageTambahData
+        const btnTambahData_PageHistory = document.querySelector('.historys .btnTambahData a');
+        const pageTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage');
+        const btnBatalTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage button.batal');
+        btnTambahData_PageHistory.addEventListener('click', ()=>{
+            pageTambahData_PageHistory.classList.add('is-active');
+        })
+        btnBatalTambahData_PageHistory.addEventListener('click', ()=>{
+            pageTambahData_PageHistory.classList.remove('is-active');
+        })
+
+
+    </script>
+</body>
+
+</html>
