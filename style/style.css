@@ -921,7 +921,7 @@ body .content.historys form.tambahDataPage .field.kategori input[type=radio]:che
   background-color: #6334FF;
   color: white;
 }
-body .content.historys form.tambahDataPage button {
+body .content.historys form.tambahDataPage button, body .content.historys form.tambahDataPage div.batal {
   padding: 20px 10px;
   border: none;
   outline: none;
@@ -929,16 +929,17 @@ body .content.historys form.tambahDataPage button {
   color: white;
   cursor: pointer;
 }
-body .content.historys form.tambahDataPage button:hover {
+body .content.historys form.tambahDataPage button:hover, body .content.historys form.tambahDataPage div.batal:hover {
   background-color: #4300d2;
 }
-body .content.historys form.tambahDataPage button.batal {
+body .content.historys form.tambahDataPage div.batal {
   margin-bottom: 10px;
   background-color: #EEEEEE;
   color: #7b7b7b;
   margin-top: 50px;
+  text-align: center;
 }
-body .content.historys form.tambahDataPage button.batal:hover {
+body .content.historys form.tambahDataPage div.batal:hover {
   background-color: #e1e1e1;
 }
 

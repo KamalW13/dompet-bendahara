@@ -705,7 +705,7 @@
                         <label for="pengeluaran">Pengeluaran</label>
                     </div>
 
-                    <button class="batal">Batal</button>
+                    <div class="batal">Batal</div>
                     <button type="submit">Tambah Data</button>
                 </div>
             </form>
@@ -837,7 +837,7 @@
         // Content > History > pageTambahData
         const btnTambahData_PageHistory = document.querySelector('.historys .btnTambahData a');
         const pageTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage');
-        const btnBatalTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage button.batal');
+        const btnBatalTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage div.batal');
         btnTambahData_PageHistory.addEventListener('click', () => {
             pageTambahData_PageHistory.classList.add('is-active');
         })

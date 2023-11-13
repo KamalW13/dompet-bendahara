@@ -1106,7 +1106,7 @@ body{
                     }
                 }
 
-                button{
+                button, div.batal{
                     padding: 20px 10px;
                     border: none;
                     outline: none;
@@ -1117,18 +1117,18 @@ body{
                     &:hover{
                         background-color: darken($brandColor, 25%);
                     }
-
-                    &.batal{
+                }
+                div.batal{
                         margin-bottom: 10px;
                         background-color: #EEEEEE;
                         color: #7b7b7b;
                         margin-top: 50px;
+                        text-align: center;
 
                         &:hover{
                             background-color: darken(#EEEEEE, 5%);
                         }
                     }
-                }
             }
         }
     }
