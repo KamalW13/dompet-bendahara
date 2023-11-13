@@ -128,11 +128,13 @@ body .contents {
   width: 100%;
   height: 100vh;
   position: relative;
+  overflow-y: hidden;
 }
 body .content {
   width: 100%;
   height: 100vh;
   display: none;
+  padding-top: 30px;
 }
 body .content.is-active {
   display: inline-block;
@@ -728,10 +730,7 @@ body .content.historys .filter .filter-box {
   align-items: center;
   gap: 15px;
 }
-body .content.historys .filter .filter-box .select-box {
-  display: flex;
-}
-body .content.historys .filter .filter-box .select-box select {
+body .content.historys .filter .filter-box select {
   padding: 10px 18px;
   width: 300px;
   border-radius: 5px;
@@ -848,8 +847,8 @@ body .content.historys .history .data:nth-child(1) .tanggal {
 }
 body .content.historys form.tambahDataPage {
   position: absolute;
-  top: 0;
   left: 0;
+  top: 0;
   display: grid;
   place-content: center;
   width: 100%;
@@ -868,6 +867,7 @@ body .content.historys form.tambahDataPage .wrapper {
   border: 1px solid #6334FF;
   box-shadow: 0px 30px 200px 50px rgba(255, 255, 255, 0.462745098);
   padding: 29px 39px;
+  width: 500px;
 }
 body .content.historys form.tambahDataPage .field {
   margin-bottom: 40px;
@@ -875,6 +875,10 @@ body .content.historys form.tambahDataPage .field {
 body .content.historys form.tambahDataPage .field .judul {
   margin-bottom: 7px;
   color: #5B5B5B;
+}
+body .content.historys form.tambahDataPage .field.nominal {
+  display: flex;
+  flex-direction: column;
 }
 body .content.historys form.tambahDataPage .field.nominal label {
   background-color: #EEEEEE;
@@ -888,6 +892,7 @@ body .content.historys form.tambahDataPage .field.nominal label input {
   background-color: transparent;
   outline: none;
   border: none;
+  padding: 10px;
 }
 body .content.historys form.tambahDataPage .field.dompet select {
   padding: 13px 20px;
@@ -917,20 +922,20 @@ body .content.historys form.tambahDataPage .field.kategori input[type=radio]:che
   color: white;
 }
 body .content.historys form.tambahDataPage button {
-  padding: 10px;
+  padding: 20px 10px;
   border: none;
   outline: none;
-  background-color: #6334FF;
+  background-color: #8952FF;
   color: white;
   cursor: pointer;
 }
 body .content.historys form.tambahDataPage button:hover {
-  background-color: #2a00b4;
+  background-color: #4300d2;
 }
 body .content.historys form.tambahDataPage button.batal {
   margin-bottom: 10px;
   background-color: #EEEEEE;
-  color: #9B9B9B;
+  color: #7b7b7b;
   margin-top: 50px;
 }
 body .content.historys form.tambahDataPage button.batal:hover {
@@ -949,6 +954,24 @@ body .content.historys form.tambahDataPage button.batal:hover {
   }
   body::-webkit-scrollbar {
     display: none;
+  }
+  body a.btnTambahDataMobile {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  body a.btnTambahDataMobile iconify-icon {
+    width: -moz-fit-content;
+    width: fit-content;
+    background-color: #6334FF;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0px 5px rgb(255, 255, 255);
   }
   body .logoAndProfile {
     display: flex;
@@ -1122,16 +1145,16 @@ body .content.historys form.tambahDataPage button.batal:hover {
   body .contents .content .dashboard a.tambahDataNominal, body .contents .content .dashboard a.tambahDataDompet {
     display: none;
   }
-  body .contents .content .dompet {
+  body .contents .content.dompets .dompet {
     background-color: white;
     border-radius: 15px;
     padding-bottom: 150px;
     transform: translateY(-15vh);
   }
-  body .contents .content .dompet.moveTransform {
+  body .contents .content.dompets .dompet.moveTransform {
     transform: translateY(0);
   }
-  body .contents .content .dompet .totalDompetYangDipilih {
+  body .contents .content.dompets .dompet .totalDompetYangDipilih {
     background-color: transparent;
     justify-content: right;
     color: #5b5b5b;
@@ -1139,36 +1162,36 @@ body .content.historys form.tambahDataPage button.batal:hover {
     padding: 0px 27px;
     margin-bottom: 9px;
   }
-  body .contents .content .dompet .totalDompetYangDipilih .nominal {
+  body .contents .content.dompets .dompet .totalDompetYangDipilih .nominal {
     display: none;
   }
-  body .contents .content .dompet .totalDompetYangDipilih .pilihDompet .checkbox-wrapper-45 .cbx:hover {
+  body .contents .content.dompets .dompet .totalDompetYangDipilih .pilihDompet .checkbox-wrapper-45 .cbx:hover {
     border-color: #6334FF;
   }
-  body .contents .content .dompet .totalDompetYangDipilih .pilihDompet .checkbox-wrapper-45 input[type=checkbox]:checked + .cbx {
+  body .contents .content.dompets .dompet .totalDompetYangDipilih .pilihDompet .checkbox-wrapper-45 input[type=checkbox]:checked + .cbx {
     border: 2px solid #6334FF;
   }
-  body .contents .content .dompet .info {
+  body .contents .content.dompets .dompet .info {
     order: 1;
     text-align: left;
     font-size: 0.8em;
     padding: 23px;
     margin-bottom: 8px;
   }
-  body .contents .content .dompet .kumpulanDompet {
+  body .contents .content.dompets .dompet .kumpulanDompet {
     order: 3;
     height: 500px;
     padding: 0 27px;
     padding-bottom: 100px;
   }
-  body .contents .content .dompet .kumpulanDompet .wrapperDompet .data {
+  body .contents .content.dompets .dompet .kumpulanDompet .wrapperDompet .data {
     min-width: 100%;
     height: 150px;
   }
-  body .contents .content .dompet .tambahData {
+  body .contents .content.dompets .dompet .tambahData {
     display: none;
   }
-  body .contents .content .pageTambahData {
+  body .contents .content.dompets .pageTambahData {
     width: 100vw;
     height: 100vh;
     padding: 20px;
@@ -1176,68 +1199,130 @@ body .content.historys form.tambahDataPage button.batal:hover {
     justify-content: center;
     align-items: center;
   }
-  body .contents .content .pageTambahData * {
-    border: 1px solid red;
-  }
-  body .contents .content .pageTambahData .tambahDataDompet {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet {
     gap: 10px;
     grid-template-areas: "namaDompet" "temaWarna" "action";
     width: 100%;
     height: 90%;
     padding-top: 0;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .judul {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .judul {
     margin-bottom: 10px;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .namaDompet {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .namaDompet {
     margin-top: 100px;
     width: auto;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .namaDompet input {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .namaDompet input {
     padding: 5px;
     height: 80px;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .temaWarna {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .temaWarna {
     width: auto;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna {
     height: 300px;
     justify-content: center;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor {
     width: 150px;
     height: 100px;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor.selected {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor.selected {
     border: 1px solid black;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .hasil {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .hasil {
     display: none;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .action {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .action {
     flex-direction: column;
     gap: 10px;
     width: auto;
   }
-  body .contents .content .pageTambahData .tambahDataDompet .action button, body .contents .content .pageTambahData .tambahDataDompet .action a {
+  body .contents .content.dompets .pageTambahData .tambahDataDompet .action button, body .contents .content.dompets .pageTambahData .tambahDataDompet .action a {
     height: 60px;
   }
-  body .contents .content a.btnTambahDataMobile {
-    position: fixed;
-    bottom: 150px;
-    right: 30px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  body .contents .content.historys {
+    width: 100vw;
+    overflow-x: hidden;
+    padding: 20px;
+    height: 100vh;
+    padding-top: 50px;
+    overflow-y: hidden;
   }
-  body .contents .content a.btnTambahDataMobile iconify-icon {
-    width: -moz-fit-content;
-    width: fit-content;
-    background-color: #6334FF;
-    border-radius: 10px;
+  body .contents .content.historys *::-webkit-scrollbar {
+    background: rgb(255, 255, 255);
+    width: 5px;
+  }
+  body .contents .content.historys *::-webkit-scrollbar-thumb {
+    background: rgb(201, 201, 201);
+    border-radius: 15px;
+  }
+  body .contents .content.historys .filter {
+    gap: 15px;
+    font-size: 0.9em;
+    justify-content: left;
+  }
+  body .contents .content.historys .filter .filter-box {
+    flex-direction: column;
+    order: 2;
+    flex: 2;
+    gap: 0;
+    align-items: left !important;
+  }
+  body .contents .content.historys .filter .filter-box span.text {
+    width: 100%;
+    text-align: left;
+  }
+  body .contents .content.historys .filter .filter-box .select-box {
+    width: 100%;
+  }
+  body .contents .content.historys .filter .filter-box select {
+    width: 100%;
+  }
+  body .contents .content.historys .filter iconify-icon {
+    order: 1;
+  }
+  body .contents .content.historys .btnTambahData {
+    display: none;
+  }
+  body .contents .content.historys .history {
+    height: 75vh;
+    padding: 0;
+    padding-bottom: 300px;
+  }
+  body .contents .content.historys .history .data .wrapper-data .dompet .namaDompet {
+    font-size: 0.8em;
+    padding: 5px 15px;
+  }
+  body .contents .content.historys .history .data .wrapper-data .dompet .deskripsi {
+    padding: 15px;
+    flex: 2;
+  }
+  body .contents .content.historys .history .data .wrapper-data .dompet .deskripsi .deskripsi-text {
+    font-size: 0.7em;
+  }
+  body .contents .content.historys .history .data .wrapper-data .dompet .nominal {
+    font-size: 1.2em;
+    text-align: right;
+    padding-right: 15px;
+  }
+  body .contents .content.historys .history .data .wrapper-data .action {
+    flex-direction: column;
+  }
+  body .contents .content.historys .history .data .wrapper-data .action a {
     padding: 10px;
-    box-shadow: 0 0px 5px rgb(255, 255, 255);
+  }
+  body .contents .content.historys form.tambahDataPage {
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    background-color: white;
+  }
+  body .contents .content.historys form.tambahDataPage.is-active {
+    transform: translateY(0);
+  }
+  body .contents .content.historys form.tambahDataPage .wrapper {
+    border: none;
   }
 }
 @keyframes text-focus-in {

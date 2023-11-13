@@ -63,7 +63,7 @@
     </nav>
 
     <div class="contents">
-        <div class="content dashboards" data-page="dashboard">
+        <div class="content dashboards is-active" data-page="dashboard">
             <div class="totalDompetMobile">
                 <span class="judul">Total Dompet</span>
                 <span class="nominal">
@@ -288,14 +288,14 @@
             <div class="totalDompetMobile">
                 <span class="judul">Total Dompet yang dipilih</span>
                 <span class="nominal">
-                    Rp<span class="angka">0</span>
+                    <span class="angka">0</span>
                 </span>
             </div>
 
             <div class="dompet">
                 <div class="totalDompetYangDipilih">
                     <div class="nominal">
-                        <span>Total: Rp</span>
+                        <span>Total: </span>
                         <span class="angka">0</span>
                     </div>
                     <div class="pilihDompet">
@@ -472,7 +472,7 @@
                             <iconify-icon icon="mdi:theme-outline" width="28"></iconify-icon> <span>Tema Warna</span>
                         </div>
                         <div class="kumpulanWarna">
-                            <div class="boxColor" data-selectBox ></div>
+                            <div class="boxColor" data-selectBox></div>
                             <div class="boxColor selected" data-selectBox></div>
                             <div class="boxColor" data-selectBox></div>
                             <div class="boxColor" data-selectBox></div>
@@ -512,7 +512,7 @@
 
         </div>
 
-        <div class="content historys">
+        <div class="content historys" data-page="history">
             <div class="filter">
                 <div class="filter-box urut-berdasarkan">
                     <span class="text">Urut Berdasarkan</span>
@@ -560,7 +560,7 @@
                                 <iconify-icon icon="lucide:trash" width="28"></iconify-icon>
                             </a>
                         </div>
-                    </div>    
+                    </div>
                 </div>
                 <div class="data">
                     <div class="wrapper-data">
@@ -676,14 +676,19 @@
                 </div>
             </div>
 
+            <a class="btnTambahDataMobile">
+                <iconify-icon icon="ic:round-plus" width="48"></iconify-icon>
+            </a>
+
             <form class="tambahDataPage">
                 <div class="wrapper">
                     <div class="field nominal">
                         <div class="judul">Nominal</div>
                         <label class="input">
-                            <span>Rp.</span>
-                            <input type="text">
+                            <input type="text" placeholder="cth: 15000">
                         </label>
+                        <span class="formatAngka">Rp 0,00
+                        </span>
                     </div>
                     <div class="field dompet">
                         <div class="judul">Dompet</div>
@@ -695,11 +700,11 @@
                     <div class="field kategori">
                         <input type="radio" name="kategori" id="pemasukan">
                         <label for="pemasukan">Pemasukan</label>
-                    
+
                         <input type="radio" name="kategori" id="pengeluaran">
                         <label for="pengeluaran">Pengeluaran</label>
                     </div>
-                    
+
                     <button class="batal">Batal</button>
                     <button type="submit">Tambah Data</button>
                 </div>
@@ -766,7 +771,7 @@
                 nominalDompetYangDipilih += convertAngka;
             }
 
-            var angkaTotal = formatRupiah(nominalDompetYangDipilih);
+            var angkaTotal = formatRupiah(nominalDompetYangDipilih, 'Rp. ');
             totalNominalDompet.innerHTML = angkaTotal;
             totalNominalDompetMobile.innerHTML = angkaTotal;
         }
@@ -791,41 +796,37 @@
 
             console.log(wrapperContentDompet);
         }
+
+        const local = 'id-ID';
+        const options = {
+            style: 'currency',
+            currency: 'IDR'
+        }
         function formatRupiah(angka) { // Merubah Int ke Rupiah
-            var number_string = angka.toString(),
-                sisa = number_string.length % 3,
-                rupiah = number_string.substr(0, sisa),
-                ribuan = number_string.substr(sisa).match(/\d{3}/g);
-
-            if (ribuan) {
-                separator = sisa ? '.' : '';
-                rupiah += separator + ribuan.join('.');
-            }
-
-            return rupiah;
+            return new Intl.NumberFormat(local, options).format(angka);
         }
 
 
 
         // Content > Dompet > pageTambahData = Tambah Data Dompet
         const btnTambahDataDesktop = document.querySelector('.dompets .dompet .tambahData button');
-        const btnTambahDataMobile = document.querySelector('.dompets a.btnTambahDataMobile');
-        const btnTambahData = [btnTambahDataDesktop, btnTambahDataMobile];
+        const btnTambahDataMobile_Dompet = document.querySelector('.dompets a.btnTambahDataMobile');
+        const btnTambahData = [btnTambahDataDesktop, btnTambahDataMobile_Dompet];
         btnTambahData.forEach(btn => { // Ketika tombol Tambah Data ditekan
             btn.addEventListener('click', () => {
                 document.querySelector('.dompets .pageTambahData').classList.add('is-active');
             })
         })
 
-        const btnBatalTambahDataDompet = document.querySelector('.dompets .pageTambahData .action button.batal');
-        btnBatalTambahDataDompet.addEventListener('click', () => { // Ketika tombol Batal ditekan
+        const btnBatalTambahDataDompet_Dompet = document.querySelector('.dompets .pageTambahData .action button.batal');
+        btnBatalTambahDataDompet_Dompet.addEventListener('click', () => { // Ketika tombol Batal ditekan
             document.querySelector('.dompets .pageTambahData').classList.remove('is-active');
         })
 
         // Content > Dompet > pageTambahData = Tambah Data Dompet > Select/Pilih Warna Dompet
         const boxColors = document.querySelectorAll('[data-selectBox]');
         boxColors.forEach(boxColor => {
-            boxColor.addEventListener('click', ()=>{
+            boxColor.addEventListener('click', () => {
                 document.querySelector('.boxColor.selected').classList.remove('selected');
                 boxColor.classList.add('selected');
             })
@@ -837,13 +838,25 @@
         const btnTambahData_PageHistory = document.querySelector('.historys .btnTambahData a');
         const pageTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage');
         const btnBatalTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage button.batal');
-        btnTambahData_PageHistory.addEventListener('click', ()=>{
+        btnTambahData_PageHistory.addEventListener('click', () => {
             pageTambahData_PageHistory.classList.add('is-active');
         })
-        btnBatalTambahData_PageHistory.addEventListener('click', ()=>{
+        btnBatalTambahData_PageHistory.addEventListener('click', () => {
             pageTambahData_PageHistory.classList.remove('is-active');
         })
 
+        const outputFormat_pageHistory = document.querySelector('.historys form.tambahDataPage .field.nominal span.formatAngka');
+        const inputTambahData_PageHistory = document.querySelector('.historys form.tambahDataPage .field.nominal .input input');
+        inputTambahData_PageHistory.addEventListener('keyup', () => {
+            const angkaFormat = formatRupiah(inputTambahData_PageHistory.value);
+            outputFormat_pageHistory.innerHTML = angkaFormat;
+        });
+
+        const btnTambahDataMobile_PageHistory = document.querySelector('.historys a.btnTambahDataMobile');
+        btnTambahDataMobile_PageHistory.addEventListener('click', ()=>{
+            pageTambahData_PageHistory.classList.add('is-active');
+            console.log('OK!');
+        })
 
     </script>
 </body>

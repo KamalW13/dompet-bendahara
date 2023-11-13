@@ -173,6 +173,7 @@ body{
         width: 100%;
         height: 100vh;
         position: relative;
+        overflow-y: hidden;
 
         // *{
         //     border: 1px solid red;
@@ -183,6 +184,7 @@ body{
         width: 100%;
         height: 100vh;
         display: none;
+        padding-top: 30px;
 
         &.is-active{
             display: inline-block;
@@ -197,6 +199,8 @@ body{
         .totalDompetMobile, a.tambahDataMobile{
             display: none;
         }
+
+        
 
         // Content > Dashboard =========
         &.dashboards{
@@ -878,19 +882,16 @@ body{
                     align-items: center;
                     gap: 15px;
                     
-                    .select-box{
-                        display: flex;
-
-                        select{
-                            padding: 10px 18px;
-                            width: 300px;
-                            border-radius: 5px;
-                            border: none;
-                            outline: none;
-                            position: relative;
-                            background: #EEE;
-                        }     
-                    }
+                    select{
+                        padding: 10px 18px;
+                        width: 300px;
+                        border-radius: 5px;
+                        border: none;
+                        outline: none;
+                        position: relative;
+                        background: #EEE;
+                    }     
+                    
                 }
                 
             }
@@ -1019,8 +1020,8 @@ body{
 
             form.tambahDataPage{
                 position: absolute;
-                top: 0;
                 left: 0;
+                top: 0;
                 display: grid;
                 place-content: center;
                 width: 100%;
@@ -1039,6 +1040,7 @@ body{
                     border: 1px solid $brandColor2;
                     box-shadow: 0px 30px 200px 50px #ffffff76;
                     padding: 29px 39px;
+                    width: 500px;
                 }
 
                 .field{
@@ -1050,6 +1052,8 @@ body{
                     }
 
                     &.nominal{
+                        display: flex;
+                        flex-direction: column;
                         label{
                             background-color: #EEEEEE;
                             padding: 10px;
@@ -1063,6 +1067,7 @@ body{
                                 background-color: transparent;
                                 outline: none;
                                 border: none;
+                                padding: 10px;
                             }
                         }
                     }
@@ -1102,21 +1107,21 @@ body{
                 }
 
                 button{
-                    padding: 10px;
+                    padding: 20px 10px;
                     border: none;
                     outline: none;
-                    background-color: $brandColor2;
+                    background-color: $brandColor;
                     color: white;
                     cursor: pointer;
 
                     &:hover{
-                        background-color: darken($brandColor2, 25%);
+                        background-color: darken($brandColor, 25%);
                     }
 
                     &.batal{
                         margin-bottom: 10px;
                         background-color: #EEEEEE;
-                        color: #9B9B9B;
+                        color: #7b7b7b;
                         margin-top: 50px;
 
                         &:hover{
@@ -1148,6 +1153,25 @@ body{
 
         &::-webkit-scrollbar{
             display: none;
+        }
+
+        a.btnTambahDataMobile{
+            position: fixed;
+            bottom: 150px;
+            right: 30px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            iconify-icon{
+                width: fit-content;
+                background-color: $brandColor2;
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: 0 0px 5px rgb(255, 255, 255);
+            }
         }
 
         .logoAndProfile{
@@ -1362,143 +1386,230 @@ body{
                 }
 
                 // Content > Dompet
-                .dompet{
-                    background-color: white;
-                    border-radius: 15px;
-                    padding-bottom: 150px;
-                    transform: translateY(-15vh);
+                &.dompets{
+                    .dompet{
+                        background-color: white;
+                        border-radius: 15px;
+                        padding-bottom: 150px;
+                        transform: translateY(-15vh);
 
-                    &.moveTransform{
-                        transform: translateY(0);
-                    }
-
-                    .totalDompetYangDipilih{
-                        background-color: transparent;
-                        justify-content: right;
-                        color: #5b5b5b;
-                        order: 2;
-                        padding: 0px 27px;
-                        margin-bottom: 9px;
-                        .nominal{
-                            display: none;
+                        &.moveTransform{
+                            transform: translateY(0);
                         }
 
-                        .pilihDompet{
-                            .checkbox-wrapper-45 .cbx:hover {
-                                border-color: $brandColor2;
+                        .totalDompetYangDipilih{
+                            background-color: transparent;
+                            justify-content: right;
+                            color: #5b5b5b;
+                            order: 2;
+                            padding: 0px 27px;
+                            margin-bottom: 9px;
+                            .nominal{
+                                display: none;
                             }
-                            .checkbox-wrapper-45 input[type="checkbox"]:checked + .cbx {
-                                border: 2px solid $brandColor2;
-                            }
-                        }
-                    }
 
-                    .info{
-                        order: 1;
-                        text-align: left;
-                        font-size: .8em;
-                        padding: 23px;
-                        margin-bottom: 8px;
-                    }
-
-                    .kumpulanDompet{
-                        order: 3;
-                        height: 500px;
-                        padding: 0 27px;
-                        padding-bottom: 100px;
-
-                        .wrapperDompet{
-                            .data{
-                                min-width: 100%;
-                                height: 150px;
-                            }
-                        }
-                    }
-
-                    .tambahData{
-                        display: none;
-                    }
-                }
-
-                .pageTambahData{
-                    width: 100vw;
-                    height: 100vh;
-                    padding: 20px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    *{
-                        border: 1px solid red;
-                    }
-
-                    .tambahDataDompet{
-                        gap: 10px;
-                        grid-template-areas: 'namaDompet' 'temaWarna' 'action';
-                        width: 100%;
-                        height: 90%;
-                        padding-top: 0;
-
-                        .judul{
-                            margin-bottom: 10px;
-                        }
-
-                        .namaDompet{
-                            margin-top: 100px;
-                            width: auto;
-                            input{
-                                padding: 5px;
-                                height: 80px;
-                            }
-                        }
-
-                        .temaWarna{
-                            width: auto;
-
-                            .kumpulanWarna{
-                                height: 300px;
-                                justify-content: center;
-
-                                .boxColor{
-                                    width: 150px;
-                                    height: 100px;
-
-                                    &.selected{
-                                        border: 1px solid black;
-                                    }
+                            .pilihDompet{
+                                .checkbox-wrapper-45 .cbx:hover {
+                                    border-color: $brandColor2;
+                                }
+                                .checkbox-wrapper-45 input[type="checkbox"]:checked + .cbx {
+                                    border: 2px solid $brandColor2;
                                 }
                             }
                         }
 
-                        .hasil{
-                            display: none;
+                        .info{
+                            order: 1;
+                            text-align: left;
+                            font-size: .8em;
+                            padding: 23px;
+                            margin-bottom: 8px;
                         }
 
-                        .action{
-                            flex-direction: column;
-                            gap: 10px;
-                            width: auto;
-                            button, a{
-                                height: 60px;
+                        .kumpulanDompet{
+                            order: 3;
+                            height: 500px;
+                            padding: 0 27px;
+                            padding-bottom: 100px;
+
+                            .wrapperDompet{
+                                .data{
+                                    min-width: 100%;
+                                    height: 150px;
+                                }
                             }
                         }
-                    }   
-                }
-                a.btnTambahDataMobile{
-                    position: fixed;
-                    bottom: 150px;
-                    right: 30px;
-                    color: white;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
 
-                    iconify-icon{
-                        width: fit-content;
-                        background-color: $brandColor2;
-                        border-radius: 10px;
-                        padding: 10px;
-                        box-shadow: 0 0px 5px rgb(255, 255, 255);
+                        .tambahData{
+                            display: none;
+                        }
+                    }
+                    .pageTambahData{
+                        width: 100vw;
+                        height: 100vh;
+                        padding: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .tambahDataDompet{
+                            gap: 10px;
+                            grid-template-areas: 'namaDompet' 'temaWarna' 'action';
+                            width: 100%;
+                            height: 90%;
+                            padding-top: 0;
+
+                            .judul{
+                                margin-bottom: 10px;
+                            }
+
+                            .namaDompet{
+                                margin-top: 100px;
+                                width: auto;
+                                input{
+                                    padding: 5px;
+                                    height: 80px;
+                                }
+                            }
+
+                            .temaWarna{
+                                width: auto;
+
+                                .kumpulanWarna{
+                                    height: 300px;
+                                    justify-content: center;
+
+                                    .boxColor{
+                                        width: 150px;
+                                        height: 100px;
+
+                                        &.selected{
+                                            border: 1px solid black;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .hasil{
+                                display: none;
+                            }
+
+                            .action{
+                                flex-direction: column;
+                                gap: 10px;
+                                width: auto;
+                                button, a{
+                                    height: 60px;
+                                }
+                            }
+                        }   
+                    }
+                }
+                
+
+                // Content > History
+                &.historys{
+                    width: 100vw;
+                    overflow-x: hidden;
+                    padding: 20px;
+                    height: 100vh;
+                    padding-top: 50px;
+                    overflow-y: hidden;
+
+                    & *::-webkit-scrollbar{
+                        background: rgb(255, 255, 255);
+                        width: 5px;
+                    }
+
+                    & *::-webkit-scrollbar-thumb{
+                        background: rgb(201, 201, 201);
+                        border-radius: 15px;
+                    }
+
+                    .filter{
+                        gap: 15px;
+                        font-size: .9em;
+                        justify-content: left;
+
+                        .filter-box{
+                            flex-direction: column;
+                            order: 2;
+                            flex: 2;
+                            gap: 0;
+                            align-items: left !important;
+
+                            span.text{
+                                width: 100%;
+                                text-align: left;
+                            }
+                            
+                            .select-box{
+                                width: 100%;
+                            }
+
+                            select{
+                                width: 100%;
+                            }
+                        }
+
+                        iconify-icon{
+                            order: 1;
+                        }
+                    }
+
+                    .btnTambahData{
+                        display: none;
+                    }
+
+                    .history{
+                        height: 75vh;
+                        padding: 0;
+                        padding-bottom: 300px;
+                        .data{
+                            .wrapper-data{
+                                .dompet{
+
+                                    .namaDompet{
+                                        font-size: .8em;
+                                        padding: 5px 15px;
+                                    }
+
+                                    .deskripsi{
+                                        padding: 15px;
+                                        flex: 2; 
+                                        .deskripsi-text{
+                                            font-size: .7em;
+                                        }
+                                    }
+
+                                    .nominal{
+                                        font-size: 1.2em;
+                                        text-align: right;
+                                        padding-right: 15px;
+                                    }
+                                }
+
+                                .action{
+                                    flex-direction: column;
+                                    a{
+                                        padding: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    form.tambahDataPage{
+                        backdrop-filter: none;
+                        background-color: white;
+
+                        &.is-active{
+                            transform: translateY(0);
+                        }
+
+                        .wrapper{
+                            border: none;
+                        }
                     }
                 }
             }
