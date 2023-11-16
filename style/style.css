@@ -18,16 +18,31 @@ body {
   width: 100vw;
   height: 100vh;
 }
+body *::-webkit-scrollbar {
+  background: rgb(191, 191, 191);
+  width: 5px;
+}
+body *::-webkit-scrollbar-thumb {
+  background: #8952FF;
+  border-radius: 15px;
+}
 body .logoAndProfile, body a.btnTambahDataMobile {
   display: none;
 }
 body nav {
-  width: 400px;
+  width: 500px;
   border-right: 1px solid #D0D0D0;
   height: 100vh;
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+}
+body nav.blockFunction {
+  width: 0px;
+}
+body nav.blockFunction .head-nav .photo {
+  display: none;
 }
 body nav iconify-icon {
   margin-right: 20px;
@@ -147,6 +162,38 @@ body .content .dompet .kumpulanDompet .data a.wrapper .nominal {
 body .content .totalDompetMobile, body .content a.tambahDataMobile {
   display: none;
 }
+body .content .body.data-dompet {
+  max-height: 100%;
+  overflow-y: scroll;
+  padding: 0 40px;
+}
+body .content .body.data-dompet .data {
+  margin-bottom: 15px;
+}
+body .content .body.data-dompet .data a {
+  width: 100%;
+  height: 163px;
+  background: linear-gradient(102deg, #6334FF -4.92%, #CE44FF 50.16%, #8053FF 101.9%);
+  display: flex;
+  padding: 40px 20px;
+  border-radius: 6px;
+  color: rgb(255, 255, 255);
+  flex-direction: column;
+  position: relative;
+  box-shadow: none;
+}
+body .content .body.data-dompet .data a .nominal {
+  margin-top: 15px;
+}
+body .content .body.data-dompet .data a .lihat {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  font-size: 0.8em;
+}
+body .content .body.data-dompet .data a:hover {
+  transform: translateX(5px);
+}
 body .content.dashboards {
   height: 100%;
 }
@@ -163,133 +210,15 @@ body .content.dashboards .dashboard {
 }
 body .content.dashboards .dashboard .totalDompet {
   grid-area: totalDompet;
-  background-color: #6334FF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  height: 139px;
-  border-radius: 18px;
-}
-body .content.dashboards .dashboard .totalDompet .nominal {
-  font-size: 2em;
-  font-weight: bold;
 }
 body .content.dashboards .dashboard .history, body .content.dashboards .dashboard .dompets {
-  background-color: #FFFFFF;
   height: 70vh;
-  border-radius: 18px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-body .content.dashboards .dashboard .history .head, body .content.dashboards .dashboard .dompets .head {
-  display: flex;
-  align-items: center;
-  padding: 40px;
-}
-body .content.dashboards .dashboard .history .head .judul, body .content.dashboards .dashboard .dompets .head .judul {
-  color: rgba(0, 0, 0, 0.5);
-  font-weight: 500;
-  font-size: 1.3em;
-  display: flex;
-  align-items: center;
-  margin-right: 19px;
-}
-body .content.dashboards .dashboard .history .body, body .content.dashboards .dashboard .dompets .body {
-  max-height: 100%;
-  overflow-y: scroll;
-  padding: 0 40px;
 }
 body .content.dashboards .dashboard .history {
   grid-area: history;
 }
-body .content.dashboards .dashboard .history .filter {
-  background-color: #F1F1F1;
-}
-body .content.dashboards .dashboard .history .filter select {
-  color: black;
-  border: none !important;
-  outline: none;
-  padding: 8px 26px;
-  border-radius: 50%;
-  background-color: transparent;
-}
-body .content.dashboards .dashboard .history .filter select option {
-  color: rgb(0, 0, 0);
-  padding: 8px 26px;
-}
-body .content.dashboards .dashboard .history .body .tanggal .judul {
-  color: rgba(0, 0, 0, 0.8);
-  margin-bottom: 15px;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data {
-  border-radius: 9px;
-  padding: 13px;
-  display: flex;
-  background-color: #FFFFFF;
-  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data .informasi {
-  display: flex;
-  flex-direction: column;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data .informasi .namaDompet {
-  color: rgba(0, 0, 0, 0.8);
-  position: relative;
-  margin-left: 15px;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data .informasi .namaDompet::before {
-  content: "";
-  width: 5px;
-  height: 50%;
-  background-color: #8952FF;
-  position: absolute;
-  border-radius: 20px;
-  left: -15px;
-  top: 5px;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data .informasi .deskripsi {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 0.8em;
-}
-body .content.dashboards .dashboard .history .body .tanggal .data .nominal {
-  font-weight: 500;
-  font-size: 1.3em;
-}
 body .content.dashboards .dashboard .dompets {
   grid-area: dompets;
-}
-body .content.dashboards .dashboard .dompets .data {
-  margin-bottom: 15px;
-}
-body .content.dashboards .dashboard .dompets .data a {
-  width: 100%;
-  height: 163px;
-  background: linear-gradient(102deg, #6334FF -4.92%, #CE44FF 50.16%, #8053FF 101.9%);
-  display: flex;
-  padding: 40px 20px;
-  border-radius: 6px;
-  color: rgb(255, 255, 255);
-  flex-direction: column;
-  position: relative;
-  box-shadow: none;
-}
-body .content.dashboards .dashboard .dompets .data a .nominal {
-  margin-top: 15px;
-}
-body .content.dashboards .dashboard .dompets .data a .lihat {
-  position: absolute;
-  bottom: 20px;
-  right: 25px;
-  font-size: 0.8em;
-}
-body .content.dashboards .dashboard .dompets .data a:hover {
-  transform: translateX(5px);
 }
 body .content.dashboards .dashboard a.tambahDataNominal, body .content.dashboards .dashboard a.tambahDataDompet {
   background-color: #FFFFFF;
@@ -477,7 +406,6 @@ body .content.dompets .dompet .kumpulanDompet .wrapperDompet .data.selectNominal
   align-items: center;
 }
 body .content.dompets .dompet .kumpulanDompet .wrapperDompet .data.selectNominal > div.pilihNominalDompet span.indicator iconify-icon {
-  margin-left: 8px;
   color: #6334FF;
   opacity: 0;
 }
@@ -653,6 +581,9 @@ body .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarn
 body .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor:hover {
   transform: translateY(-2px);
 }
+body .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor.selected {
+  border: 1px solid black;
+}
 body .content.dompets .pageTambahData .tambahDataDompet .hasil {
   grid-area: hasil;
   display: flex;
@@ -722,13 +653,14 @@ body .content.historys .filter {
   display: flex;
   align-items: center;
   justify-content: right;
-  gap: 50px;
 }
 body .content.historys .filter .filter-box {
   position: relative;
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-left: 25px;
+  margin-right: 10px;
 }
 body .content.historys .filter .filter-box select {
   padding: 10px 18px;
@@ -742,11 +674,12 @@ body .content.historys .filter .filter-box select {
 body .content.historys .btnTambahData {
   text-align: right;
   margin-top: 20px;
+  transform: translateX(-35px);
 }
 body .content.historys .btnTambahData a {
   display: inline-block;
   padding: 10px;
-  background-color: #eee;
+  background-color: white;
   border-radius: 5px;
   color: rgb(49, 49, 49);
   border: 1px solid #dedede;
@@ -754,11 +687,11 @@ body .content.historys .btnTambahData a {
   cursor: pointer;
 }
 body .content.historys .btnTambahData a:hover {
-  background-color: #cfcfcf;
+  background-color: #dedede;
 }
 body .content.historys .history {
   height: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   overflow-y: scroll;
   padding: 20px;
   padding-bottom: 100px;
@@ -856,6 +789,7 @@ body .content.historys form.tambahDataPage {
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   transform: translateY(100vh);
+  z-index: 5;
 }
 body .content.historys form.tambahDataPage.is-active {
   transform: translateY(0);
@@ -868,6 +802,7 @@ body .content.historys form.tambahDataPage .wrapper {
   box-shadow: 0px 30px 200px 50px rgba(255, 255, 255, 0.462745098);
   padding: 29px 39px;
   width: 500px;
+  border-radius: 5px;
 }
 body .content.historys form.tambahDataPage .field {
   margin-bottom: 40px;
@@ -875,6 +810,9 @@ body .content.historys form.tambahDataPage .field {
 body .content.historys form.tambahDataPage .field .judul {
   margin-bottom: 7px;
   color: #5B5B5B;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 body .content.historys form.tambahDataPage .field.nominal {
   display: flex;
@@ -892,6 +830,10 @@ body .content.historys form.tambahDataPage .field.nominal label input {
   background-color: transparent;
   outline: none;
   border: none;
+  padding: 10px;
+}
+body .content.historys form.tambahDataPage .field.tanggal input {
+  width: 100%;
   padding: 10px;
 }
 body .content.historys form.tambahDataPage .field.dompet select {
@@ -928,6 +870,7 @@ body .content.historys form.tambahDataPage button, body .content.historys form.t
   background-color: #8952FF;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 body .content.historys form.tambahDataPage button:hover, body .content.historys form.tambahDataPage div.batal:hover {
   background-color: #4300d2;
@@ -941,6 +884,229 @@ body .content.historys form.tambahDataPage div.batal {
 }
 body .content.historys form.tambahDataPage div.batal:hover {
   background-color: #e1e1e1;
+}
+body .content.detail-dompet.is-active {
+  display: grid;
+  grid-template-areas: "totalDompet totalDompet" "history grafik" "history dompetLain";
+  gap: 20px;
+  padding-bottom: 20px;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-rows: auto auto 2fr;
+  height: 100vh;
+}
+body .content.detail-dompet.is-active .totalDompet {
+  grid-area: totalDompet;
+  position: relative;
+}
+body .content.detail-dompet.is-active .totalDompet .action {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+}
+body .content.detail-dompet.is-active .totalDompet .action a {
+  color: white;
+}
+body .content.detail-dompet.is-active .history {
+  grid-area: history;
+  height: 100%;
+}
+body .content.detail-dompet.is-active .history .body {
+  padding: 20px;
+}
+body .content.detail-dompet.is-active .tambahData {
+  grid-area: tambahData;
+}
+body .content.detail-dompet.is-active .grafik {
+  grid-area: grafik;
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .content.detail-dompet.is-active .grafik .data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+body .content.detail-dompet.is-active .grafik .data .wrapper {
+  width: 500px;
+  background-color: #fff;
+}
+body .content.detail-dompet.is-active .grafik .data canvas {
+  display: inline-block !important;
+}
+body .content.detail-dompet.is-active .dompetLain {
+  grid-area: dompetLain;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
+}
+body .content.detail-dompet.is-active .dompetLain .head {
+  padding: 0;
+}
+body .content.detail-dompet.is-active .dompetLain .body {
+  padding: 15px;
+}
+
+.box-content {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+}
+.box-content.totalDompet {
+  background-color: #6334FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 18px;
+  height: 139px;
+}
+.box-content.totalDompet .nominal {
+  font-size: 2em;
+  font-weight: bold;
+}
+.box-content .head {
+  justify-content: space-between;
+  padding: 0 !important;
+  margin-bottom: 20px;
+  padding: 40px;
+}
+.box-content .head .left-head {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+  font-weight: 500;
+  font-size: 1.3em;
+  color: rgba(0, 0, 0, 0.5);
+}
+.box-content .head a.tambahData {
+  border: 1px solid #6334FF;
+  padding: 10px;
+  border-radius: 5px;
+  color: #6334FF;
+}
+.box-content .head a.tambahData:hover {
+  background-color: #6334FF;
+  color: white;
+}
+.box-content .body {
+  overflow-y: scroll;
+}
+.box-content.dompets, .box-content.history {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.box-content.dompets .head, .box-content.history .head {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+}
+.box-content.history {
+  height: 100%;
+}
+.box-content.history .filter {
+  background-color: #F1F1F1;
+}
+.box-content.history .filter select {
+  color: black;
+  border: none !important;
+  outline: none;
+  padding: 8px 26px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.box-content.history .filter select option {
+  color: rgb(0, 0, 0);
+  padding: 8px 26px;
+}
+.box-content.history .body {
+  padding: 20px;
+}
+.box-content.history .body .data {
+  margin-bottom: 10px;
+}
+.box-content.history .body .data .tanggal {
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.box-content.history .body .data .wrapper {
+  display: flex;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal {
+  display: flex;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+  border-radius: 9px;
+  width: 100%;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal .informasi {
+  display: flex;
+  flex-direction: column;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal .informasi .namaDompet {
+  color: rgba(0, 0, 0, 0.8);
+  position: relative;
+  margin-left: 15px;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal .informasi .namaDompet::before {
+  content: "";
+  width: 5px;
+  height: 50%;
+  background-color: #8952FF;
+  position: absolute;
+  border-radius: 20px;
+  left: -15px;
+  top: 5px;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal .informasi .deskripsi {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.8em;
+}
+.box-content.history .body .data .wrapper .informasiDanNominal .nominal {
+  font-weight: 500;
+  font-size: 1.3em;
+}
+.box-content.history .body .data .wrapper .action {
+  margin-left: 15px;
+  display: flex;
+  gap: 7px;
+}
+.box-content.history .body .data .wrapper .action a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8952FF;
+  padding: 22px;
+  border-radius: 5px;
+  color: white;
+  height: 80%;
+}
+.box-content.history .body .data .wrapper .action a:hover {
+  background-color: #661fff;
+}
+.box-content.history .body .data .wrapper .action a.delete {
+  background-color: #D0C1FF;
+  color: #8952FF;
+}
+.box-content.history .body .data .wrapper .action a.delete:hover {
+  background-color: #835bff;
+  color: white;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1073,7 +1239,7 @@ body .content.historys form.tambahDataPage div.batal:hover {
     background-color: white;
     border-radius: 20px 20px 0 0;
     overflow-x: hidden;
-    padding-bottom: 200px;
+    padding-bottom: 400px;
     padding-top: 10px;
     align-items: center;
     position: relative;
@@ -1118,9 +1284,6 @@ body .content.historys form.tambahDataPage div.batal:hover {
   body .contents .content .dashboard .history .head, body .contents .content .dashboard .dompets .head {
     padding: 10px 20px;
   }
-  body .contents .content .dashboard .history .head .judul, body .contents .content .dashboard .dompets .head .judul {
-    font-size: 1em;
-  }
   body .contents .content .dashboard .history .body, body .contents .content .dashboard .dompets .body {
     padding: 20px;
   }
@@ -1149,7 +1312,6 @@ body .content.historys form.tambahDataPage div.batal:hover {
   body .contents .content.dompets .dompet {
     background-color: white;
     border-radius: 15px;
-    padding-bottom: 150px;
     transform: translateY(-15vh);
   }
   body .contents .content.dompets .dompet.moveTransform {
@@ -1184,6 +1346,9 @@ body .content.historys form.tambahDataPage div.batal:hover {
     height: 500px;
     padding: 0 27px;
     padding-bottom: 100px;
+  }
+  body .contents .content.dompets .dompet .kumpulanDompet .wrapperDompet {
+    padding-bottom: 400px;
   }
   body .contents .content.dompets .dompet .kumpulanDompet .wrapperDompet .data {
     min-width: 100%;
@@ -1230,7 +1395,7 @@ body .content.historys form.tambahDataPage div.batal:hover {
     height: 100px;
   }
   body .contents .content.dompets .pageTambahData .tambahDataDompet .temaWarna .kumpulanWarna .boxColor.selected {
-    border: 1px solid black;
+    border: 5px solid black !important;
   }
   body .contents .content.dompets .pageTambahData .tambahDataDompet .hasil {
     display: none;
